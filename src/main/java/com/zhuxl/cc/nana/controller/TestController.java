@@ -5,8 +5,8 @@ import com.zhuxl.cc.nana.service.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,6 +35,12 @@ public class TestController {
     @RequestMapping(value = "/sayHi", method = RequestMethod.GET)
     public String sayHi() {
         return "hello";
+    }
+
+    @RequestMapping(value = "/index")
+    public String index(ModelMap modelMap) {
+        modelMap.addAttribute("helloMsg", "hello freemarker");
+        return "index";
     }
 
 
