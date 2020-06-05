@@ -40,7 +40,7 @@ public class TestController {
     @RequestMapping(value = "/index")
     public String index(ModelMap modelMap) {
         modelMap.addAttribute("helloMsg", "hello freemarker");
-        return "index";
+        return "test";
     }
 
 
