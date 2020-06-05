@@ -1,7 +1,5 @@
 package com.zhuxl.cc.nana.dao;
 
-import org.apache.ibatis.annotations.Mapper;
-
 /**
  * <p>
  * Title:        TestMapper.java
@@ -13,5 +11,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 public interface TestMapper {
 
-    String selectUserNameById(Long id);
+    String selectNameById(Long id);
 }

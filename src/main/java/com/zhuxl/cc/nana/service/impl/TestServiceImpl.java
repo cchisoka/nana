@@ -21,7 +21,7 @@ public class TestServiceImpl implements TestService {
     private TestMapper testMapper;
 
     @Override
-    public String selectUserNameById(Long id) {
-        return testMapper.selectUserNameById(id);
+    public String selectNameById(Long id) {
+        return testMapper.selectNameById(id);
     }
 }

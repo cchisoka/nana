@@ -11,5 +11,5 @@ package com.zhuxl.cc.nana.service;
  */
 public interface TestService {
 
-    String selectUserNameById(Long id);
+    String selectNameById(Long id);
 }

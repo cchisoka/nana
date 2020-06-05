@@ -49,6 +49,6 @@ public class TestController {
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public CommonResult queryUserName(@PathVariable(name = "id") Long id) {
 
-        return CommonResult.success(testService.selectUserNameById(id));
+        return CommonResult.success(testService.selectNameById(id));
     }
 }
