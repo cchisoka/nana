@@ -1,0 +1,48 @@
+.pagination-jump {
+    margin: 0;
+}
+
+.pagination-jump {
+    display: inline-block;
+    padding-left: 1px;
+    border-radius: 4px;
+}
+
+.pagination-jump>li {
+    display: inline !important;
+}
+
+.pagination-jump>li>a, .pagination-jump>li>input, .pagination-jump>li>span {
+    position: relative;
+    float: left;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+.pagination-jump>li>a {
+
+}
+
+.pagination-jump>li>input {
+    width:32px;
+    height:32px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(221,221,221,1);
+    border-radius:2px;
+    text-align: center;
+}
+
+.pagination-jump>li>span{
+    padding: 6px 10px 6px 20px;
+    color: #797979;
+    background: inherit;
+}
+
+
+.pagination-jump>li>.jump-go {
+    margin-left: 10px;
+    padding: 6px;
+}

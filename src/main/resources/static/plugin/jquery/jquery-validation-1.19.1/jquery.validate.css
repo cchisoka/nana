@@ -1,0 +1,9 @@
+label.error {
+    color: #EF1300 !important;
+    font-weight: normal !important;;
+}
+
+p.error {
+    color: #EF1300 !important;
+    margin: 0;
+}
