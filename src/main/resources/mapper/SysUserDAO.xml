@@ -107,9 +107,6 @@
       <if test="nickName != null">
         nick_name = #{nickName,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
@@ -126,9 +123,26 @@
       phone_number = #{phoneNumber,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       nick_name = #{nickName,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=TINYINT}
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
+
+
+  <select id="selectUserByCon" parameterType="com.zhuxl.cc.nana.model.query.SysUserSearch" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_user
+    <where>
+      <if test="userName != null">
+        and user_name = #{userName}
+      </if>
+      <if test="phoneNumber != null">
+        and phone_number = #{phoneNumber}
+      </if>
+      <if test="email != null">
+        and email = #{email}
+      </if>
+    </where>
+  </select>
 </mapper>

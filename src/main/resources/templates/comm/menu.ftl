@@ -37,7 +37,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active">
-                        <a href="${basePath}/user/list"><i class="fa fa-user-o"></i>用户管理</a>
+                        <a href="${basePath}/sysUser/list"><i class="fa fa-user-o"></i>用户管理</a>
                     </li>
                 </ul>
             </li>

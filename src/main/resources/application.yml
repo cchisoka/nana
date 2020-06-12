@@ -6,6 +6,9 @@ spring:
     active: dev #默认为开发环境
   freemarker:
     request-context-attribute: request
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 mybatis:
   mapper-locations:
