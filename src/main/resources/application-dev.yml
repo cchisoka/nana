@@ -8,3 +8,4 @@ logging:
   level:
       root: info #日志级别，级别包括：TRACE、DEBUG、INFO、WARN 和 ERROR，定义于 ch.qos.logback.classic.Level类
       com.zhuxl.cc.nana.dao: debug
+      com.zhuxl.cc.nana.component: debug

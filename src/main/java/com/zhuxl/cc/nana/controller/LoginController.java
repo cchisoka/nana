@@ -1,7 +1,9 @@
 package com.zhuxl.cc.nana.controller;
 
+import com.zhuxl.cc.nana.common.CommonResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * <p>
@@ -23,4 +25,14 @@ public class LoginController {
     public String login() {
         return "login";
     }
+
+    /**
+     * 登录
+     * @return
+     */
+    @PostMapping("/login")
+    public CommonResult doLogin() {
+        return null;
+    }
+
 }

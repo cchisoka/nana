@@ -9,6 +9,9 @@ spring:
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
+  aop:
+    auto: true #Add @EnableAspectJAutoProxy.
+    proxy-target-class: false #Whether subclass-based (CGLIB) proxies are to be created (true), as opposed to standard Java interface-based proxies (false).
 
 mybatis:
   mapper-locations:

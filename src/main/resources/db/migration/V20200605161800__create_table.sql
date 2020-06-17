@@ -64,3 +64,15 @@ PRIMARY KEY (`role_id`, `menu_id`)
 )
 COMMENT = '角色和菜单权限关联表';
 
+CREATE TABLE `sys_log` (
+   `logid` bigint(20) NOT NULL AUTO_INCREMENT,
+   `userid` bigint(20) DEFAULT NULL COMMENT '操作用户id',
+   `uri` varchar(255) DEFAULT NULL COMMENT '资源访问路径',
+   `ip` varchar(50) DEFAULT NULL,
+   `method` varchar(10) DEFAULT NULL COMMENT '请求类型',
+   `start_time` bigint(20) DEFAULT NULL COMMENT '访问时间',
+   `spend_time` int(11) DEFAULT NULL COMMENT '花费时间',
+   `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+   `update_time` datetime DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`logid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='日志表';

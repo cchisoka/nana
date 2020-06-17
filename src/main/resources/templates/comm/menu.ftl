@@ -24,7 +24,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active">
-                        <a href="${basePath}/statistics/logList"><i class="fa fa-circle-o"></i>访问日志</a>
+                        <a href="${basePath}/sysLog/list"><i class="fa fa-circle-o"></i>访问日志</a>
                     </li>
                 </ul>
             </li>
