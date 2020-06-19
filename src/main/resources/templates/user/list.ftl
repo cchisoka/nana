@@ -9,10 +9,10 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <!-- header -->
-<#include "/comm/header.ftl"/>
+<#include "../comm/header.ftl"/>
 
     <!-- menu -->
-<#include "/comm/menu.ftl"/>
+<#include "../comm/menu.ftl"/>
 
     <!-- content -->
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
     </div>
 
     <!-- footer -->
-<#include "/comm/footer.ftl"/>
+<#include "../comm/footer.ftl"/>
 
 </div>
 </body>

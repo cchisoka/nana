@@ -3,16 +3,16 @@
 <html>
 <head>
     <!--引入公用的js和css文件 -->
-    <#include "/comm/lib.ftl"/>
+    <#include "../comm/lib.ftl"/>
     <script src="${basePath}/js/log/logList.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <!-- header -->
-    <#include "/comm/header.ftl"/>
+    <#include "../comm/header.ftl"/>
 
     <!-- menu -->
-    <#include "/comm/menu.ftl"/>
+    <#include "../comm/menu.ftl"/>
 
     <!-- content -->
     <div class="content-wrapper">
@@ -51,7 +51,7 @@
     </div>
 
     <!-- footer -->
-    <#include "/comm/footer.ftl"/>
+    <#include "../comm/footer.ftl"/>
 
 </div>
 </body>

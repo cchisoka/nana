@@ -157,6 +157,7 @@
         and suser.user_name like concat(#{userName}, '%')
       </if>
     </where>
+    order by log.create_time desc
   </select>
 
 </mapper>

@@ -7,8 +7,8 @@
 <link rel="shortcut icon" href="${basePath}/image/comm/logo.ico" type="image/x-icon" />
 <title>账号管家</title>
 <!-- Tell the browser to be responsive to screen width -->
-<!-- Bootstrap 3.3.5 -->
-<link rel="stylesheet" href="${basePath}/plugin/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="${basePath}/plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="${basePath}/plugin/font-awesome/css/font-awesome.min.css">
 <!-- Ionicons -->
@@ -26,19 +26,19 @@ folder instead of downloading all of them to reduce the load. -->
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 <!-- Google Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<#--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 
 <script src="${basePath}/plugin/jquery/1.9.1/jquery.min.js"></script>
 
-<script src="${basePath}/plugin/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="${basePath}/plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="${basePath}/plugin/adminlte/dist/js/adminlte.min.js"></script>
 
 <!--bootstrap table-->
-<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap/3.3.5/css/bootstrap-table.css">
-<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap/3.3.5/css/bootstrap-table-pagejump.css">
-<script type="text/javascript" src="${basePath}/plugin/bootstrap/3.3.5/js/bootstrap-table.js"></script>
-<script type="text/javascript" src="${basePath}/plugin/bootstrap/3.3.5/js/bootstrap-table-pagejump.js"></script>
-<script type="text/javascript" src="${basePath}/plugin/bootstrap/3.3.5/js/locales/bootstrap-table-zh-CN.js"></script>
+<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap-table/dist/bootstrap-table.min.css">
+<#--<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap/3.3.5/css/bootstrap-table-pagejump.css">-->
+<script type="text/javascript" src="${basePath}/plugin/bootstrap-table/dist/bootstrap-table.min.js"></script>
+<#--<script type="text/javascript" src="${basePath}/plugin/bootstrap/3.3.5/js/bootstrap-table-pagejump.js"></script>-->
+<script type="text/javascript" src="${basePath}/plugin/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
 
 <!-- iCheck 1.0.1 -->
 <script src="${basePath}/plugin/icheck-1.x/icheck.min.js"></script>

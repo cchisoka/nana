@@ -1,13 +1,16 @@
 package com.zhuxl.cc.nana.model.domain;
 
-import java.io.Serializable;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 import java.util.Date;
 
 /**
  * sys_user
- * @author 
+ * @author
  */
-public class SysUser implements Serializable {
+public class SysUser implements UserDetails {
     /**
      * 主键
      */
@@ -53,7 +56,39 @@ public class SysUser implements Serializable {
      */
     private Integer isDelete;
 
-    private static final long serialVersionUID = 1L;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 
     public Long getUserId() {
         return userId;
@@ -69,10 +104,6 @@ public class SysUser implements Serializable {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public void setPassword(String password) {
