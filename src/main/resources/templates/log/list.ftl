@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <#assign basePath = request.contextPath>
+<#assign menuActive = "${basePath}/sysLog/list">
 <html>
 <head>
     <!--引入公用的js和css文件 -->

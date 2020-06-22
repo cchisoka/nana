@@ -28,17 +28,25 @@ folder instead of downloading all of them to reduce the load. -->
 <!-- Google Font -->
 <#--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 
-<script src="${basePath}/plugin/jquery/1.9.1/jquery.min.js"></script>
+<script src="${basePath}/plugin/jquery/3.3.1/jquery-3.3.1.js"></script>
+<#--<script src="${basePath}/plugin/jquery/1.9.1/jquery.min.js"></script>-->
+
 
 <script src="${basePath}/plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="${basePath}/plugin/adminlte/dist/js/adminlte.min.js"></script>
 
 <!--bootstrap table-->
-<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap-table/dist/bootstrap-table.min.css">
-<#--<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap/3.3.5/css/bootstrap-table-pagejump.css">-->
-<script type="text/javascript" src="${basePath}/plugin/bootstrap-table/dist/bootstrap-table.min.js"></script>
-<#--<script type="text/javascript" src="${basePath}/plugin/bootstrap/3.3.5/js/bootstrap-table-pagejump.js"></script>-->
-<script type="text/javascript" src="${basePath}/plugin/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+<link type="text/css" rel="stylesheet" href="${basePath}/plugin/bootstrap-table-master/dist/bootstrap-table.min.css">
+<script src="${basePath}/plugin/jquery/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+
+<script type="text/javascript" src="${basePath}/plugin/bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="${basePath}/plugin/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="${basePath}/plugin/jquery/jquery-treegrid/css/jquery.treegrid.css">
+
+
+<script src="${basePath}/plugin/bootstrap-table-master/dist/extensions/treegrid/bootstrap-table-treegrid.min.js"></script>
+
 
 <!-- iCheck 1.0.1 -->
 <script src="${basePath}/plugin/icheck-1.x/icheck.min.js"></script>

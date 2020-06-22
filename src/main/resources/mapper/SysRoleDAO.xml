@@ -13,7 +13,7 @@
     role_id, role_name, role_code, description, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from sys_role
     where role_id = #{roleId,jdbcType=BIGINT}
@@ -23,10 +23,10 @@
     where role_id = #{roleId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.zhuxl.cc.nana.model.domain.SysRole">
-    insert into sys_role (role_id, role_name, role_code, 
+    insert into sys_role (role_id, role_name, role_code,
       description, create_time, update_time
       )
-    values (#{roleId,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{roleCode,jdbcType=VARCHAR}, 
+    values (#{roleId,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{roleCode,jdbcType=VARCHAR},
       #{description,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -103,4 +103,10 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where role_id = #{roleId,jdbcType=BIGINT}
   </update>
+
+  <select id="selectRoleByCon" parameterType="com.zhuxl.cc.nana.model.domain.SysRole" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"></include>
+    from sys_role
+  </select>
 </mapper>

@@ -23,7 +23,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active">
+                    <li>
                         <a href="${basePath}/sysLog/list"><i class="fa fa-circle-o"></i>访问日志</a>
                     </li>
                 </ul>
@@ -36,8 +36,14 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active">
-                        <a href="${basePath}/sysUser/list"><i class="fa fa-user-o"></i>用户管理</a>
+                    <li>
+                        <a href="${basePath}/sysUser/list"><i class="fa fa-circle-o"></i>用户管理</a>
+                    </li>
+                    <li>
+                        <a href="${basePath}/sysRole/list"><i class="fa fa-circle-o"></i>角色管理</a>
+                    </li>
+                    <li>
+                        <a href="${basePath}/sysMenu/list"><i class="fa fa-circle-o"></i>菜单管理</a>
                     </li>
                 </ul>
             </li>
