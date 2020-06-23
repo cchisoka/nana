@@ -10,73 +10,19 @@
   <sql id="Base_Column_List">
     role_id, menu_id, create_time, update_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="com.zhuxl.cc.nana.model.domain.SysRoleMenuKey" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from sys_role_menu
-    where role_id = #{roleId,jdbcType=BIGINT}
-      and menu_id = #{menuId,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.zhuxl.cc.nana.model.domain.SysRoleMenuKey">
-    delete from sys_role_menu
-    where role_id = #{roleId,jdbcType=BIGINT}
-      and menu_id = #{menuId,jdbcType=BIGINT}
-  </delete>
+
   <insert id="insert" parameterType="com.zhuxl.cc.nana.model.domain.SysRoleMenu">
-    insert into sys_role_menu (role_id, menu_id, create_time, 
+    insert into sys_role_menu (role_id, menu_id, create_time,
       update_time)
-    values (#{roleId,jdbcType=BIGINT}, #{menuId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+    values (#{roleId,jdbcType=BIGINT}, #{menuId,jdbcType=BIGINT}, now(),
+            now())
   </insert>
-  <insert id="insertSelective" parameterType="com.zhuxl.cc.nana.model.domain.SysRoleMenu">
-    insert into sys_role_menu
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="roleId != null">
-        role_id,
-      </if>
-      <if test="menuId != null">
-        menu_id,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="roleId != null">
-        #{roleId,jdbcType=BIGINT},
-      </if>
-      <if test="menuId != null">
-        #{menuId,jdbcType=BIGINT},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhuxl.cc.nana.model.domain.SysRoleMenu">
-    update sys_role_menu
-    <set>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where role_id = #{roleId,jdbcType=BIGINT}
-      and menu_id = #{menuId,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.zhuxl.cc.nana.model.domain.SysRoleMenu">
-    update sys_role_menu
-    set create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where role_id = #{roleId,jdbcType=BIGINT}
-      and menu_id = #{menuId,jdbcType=BIGINT}
-  </update>
+
+  <delete id="deleteMenuByRoleId" parameterType="long">
+    delete from sys_role_menu where role_id = #{roleId}
+  </delete>
+
+  <select id="selectMenuIdByRoleId" parameterType="long" resultType="java.lang.Long">
+    select menu_id from sys_role_menu where role_id = #{roleId}
+  </select>
 </mapper>

@@ -47,6 +47,7 @@ folder instead of downloading all of them to reduce the load. -->
 
 <script src="${basePath}/plugin/bootstrap-table-master/dist/extensions/treegrid/bootstrap-table-treegrid.min.js"></script>
 
+<script src="${basePath}/plugin/layer/layer.js"></script>
 
 <!-- iCheck 1.0.1 -->
 <script src="${basePath}/plugin/icheck-1.x/icheck.min.js"></script>

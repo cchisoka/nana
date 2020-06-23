@@ -1,18 +1,15 @@
 package com.zhuxl.cc.nana.dao;
 
 import com.zhuxl.cc.nana.model.domain.SysRoleMenu;
-import com.zhuxl.cc.nana.model.domain.SysRoleMenuKey;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface SysRoleMenuDAO {
-    int deleteByPrimaryKey(SysRoleMenuKey key);
-
     int insert(SysRoleMenu record);
 
-    int insertSelective(SysRoleMenu record);
+    int deleteMenuByRoleId(long roleId);
 
-    SysRoleMenu selectByPrimaryKey(SysRoleMenuKey key);
-
-    int updateByPrimaryKeySelective(SysRoleMenu record);
-
-    int updateByPrimaryKey(SysRoleMenu record);
+    List<Long> selectMenuIdByRoleId(long roleId);
 }

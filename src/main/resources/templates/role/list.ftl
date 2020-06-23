@@ -4,7 +4,7 @@
 <html>
 <head>
     <!--引入公用的js和css文件 -->
-    <#include "/comm/lib.ftl"/>
+    <#include "../comm/lib.ftl"/>
     <script src="${basePath}/js/role/list.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -57,4 +57,8 @@
 
 </div>
 </body>
+<div id="allot_auth_dlg">
+    <ul id="auth_tree" class="ztree"></ul>
+    <input type="hidden" name="roleId">
+</div>
 </html>
