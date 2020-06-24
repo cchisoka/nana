@@ -2,6 +2,7 @@ package com.zhuxl.cc.nana.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.zhuxl.cc.nana.dao.SysUserDAO;
+import com.zhuxl.cc.nana.model.domain.SysMenu;
 import com.zhuxl.cc.nana.model.domain.SysUser;
 import com.zhuxl.cc.nana.model.query.SysUserSearch;
 import com.zhuxl.cc.nana.service.SysUserService;
@@ -42,6 +43,11 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
+    public List<SysMenu> selectPermissionByUserId(long userId) {
+        return sysUserDAO.selectPermissionByUserId(userId);
+    }
+
+    @Override
     public List<SysUser> selectUserByCon(SysUserSearch sysUserSearch, int offset, int limit) {
         PageHelper.offsetPage(offset, limit);
         List<SysUser> list = sysUserDAO.selectUserByCon(sysUserSearch);
@@ -65,6 +71,8 @@ public class SysUserServiceImpl implements SysUserService {
     public int deleteUserByUserId(Long userId) {
         return sysUserDAO.deleteByPrimaryKey(userId);
     }
+
+
 
 
 }

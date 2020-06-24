@@ -1,5 +1,6 @@
 package com.zhuxl.cc.nana.service;
 
+import com.zhuxl.cc.nana.model.domain.SysMenu;
 import com.zhuxl.cc.nana.model.domain.SysUser;
 import com.zhuxl.cc.nana.model.query.SysUserSearch;
 
@@ -22,6 +23,8 @@ public interface SysUserService {
      * @return
      */
     SysUser selectUserByUserName(String userName);
+
+    List<SysMenu> selectPermissionByUserId(long userId);
 
     /**
      * 根据条件分页查询用户列表
@@ -50,4 +53,5 @@ public interface SysUserService {
      * @return
      */
     int deleteUserByUserId(Long userId);
+
 }

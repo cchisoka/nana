@@ -1,5 +1,6 @@
 package com.zhuxl.cc.nana.dao;
 
+import com.zhuxl.cc.nana.model.domain.SysMenu;
 import com.zhuxl.cc.nana.model.domain.SysUser;
 import com.zhuxl.cc.nana.model.query.SysUserSearch;
 
@@ -19,4 +20,6 @@ public interface SysUserDAO {
     int updateByPrimaryKey(SysUser record);
 
     List<SysUser> selectUserByCon(SysUserSearch sysUserSearch);
+
+    List<SysMenu> selectPermissionByUserId(long userId);
 }

@@ -6,6 +6,7 @@ import com.zhuxl.cc.nana.model.domain.SysUser;
 import com.zhuxl.cc.nana.model.query.SysUserSearch;
 import com.zhuxl.cc.nana.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,7 @@ public class SysUserController {
 
 
     @GetMapping("/list")
+    @PreAuthorize("hasAuthority('sysUser:list')")
     public String list() {
         return "user/list";
     }

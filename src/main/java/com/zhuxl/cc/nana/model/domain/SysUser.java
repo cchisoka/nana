@@ -3,8 +3,10 @@ package com.zhuxl.cc.nana.model.domain;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 /**
  * sys_user
@@ -56,9 +58,11 @@ public class SysUser implements UserDetails {
      */
     private Integer isDelete;
 
+    List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return this.grantedAuthorities;
     }
 
     public String getPassword() {
@@ -67,7 +71,7 @@ public class SysUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;
+        return this.userName;
     }
 
     @Override
@@ -156,5 +160,13 @@ public class SysUser implements UserDetails {
 
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
+    }
+
+    public List<GrantedAuthority> getGrantedAuthorities() {
+        return grantedAuthorities;
+    }
+
+    public void setGrantedAuthorities(List<GrantedAuthority> grantedAuthorities) {
+        this.grantedAuthorities = grantedAuthorities;
     }
 }

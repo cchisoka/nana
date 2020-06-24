@@ -109,14 +109,13 @@ var ROLELIST = ROLELIST || {};
                 }
                 var menuIds = result.data;
                 var treeObj = $.fn.zTree.getZTreeObj("auth_tree");
-                var nodes = treeObj.getNodes();
-
+                var nodes = _getAllNodes(treeObj.getNodes());
                 if (menuIds) {
                     var i, j;
                     for(i = 0; i < nodes.length; i++) {
                         for (j = 0; j < menuIds.length; j++) {
                             if (nodes[i].id === menuIds[j]) {
-                                treeObj.checkNode(nodes[i], true, true);
+                                treeObj.checkNode(nodes[i], true, false);
                                 break;
                             }
                         }
@@ -126,6 +125,20 @@ var ROLELIST = ROLELIST || {};
 
             }
         })
+    }
+
+    function _getAllNodes(nodes) {
+        if (!nodes && nodes.length == 0) {
+            return;
+        }
+        var nodeList = nodes;
+        for (var i = 0; i < nodes.length; i++) {
+            var node = nodes[i];
+            if (node.children) {
+                nodeList = nodeList.concat(_getAllNodes(node.children));
+            }
+        }
+        return nodeList;
     }
 
     function _allotAuthHandler() {
@@ -153,10 +166,9 @@ var ROLELIST = ROLELIST || {};
                     layer.msg(result.message);
                     return;
                 }
+                layer.close(roleList.index);
                 layer.msg("保存成功",{
                     time: 2000
-                }, function () {
-                    layer.close(roleList.index);
                 });
             }
         });

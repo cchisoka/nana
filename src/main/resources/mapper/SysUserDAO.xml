@@ -13,11 +13,11 @@
     <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
   </resultMap>
   <sql id="Base_Column_List">
-    user_id, user_name, `password`, phone_number, email, nick_name, create_time, update_time, 
+    user_id, user_name, `password`, phone_number, email, nick_name, create_time, update_time,
     is_delete
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from sys_user
     where user_id = #{userId,jdbcType=BIGINT}
@@ -27,11 +27,11 @@
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.zhuxl.cc.nana.model.domain.SysUser" useGeneratedKeys="true">
-    insert into sys_user (user_name, `password`, phone_number, 
-      email, nick_name, create_time, 
+    insert into sys_user (user_name, `password`, phone_number,
+      email, nick_name, create_time,
       update_time, is_delete)
-    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="com.zhuxl.cc.nana.model.domain.SysUser" useGeneratedKeys="true">
@@ -144,5 +144,23 @@
         and email = #{email}
       </if>
     </where>
+  </select>
+
+  <select id="selectPermissionByUserId" resultType="com.zhuxl.cc.nana.model.domain.SysMenu">
+    select
+      t5.menu_id,
+      t5.pid,
+      t5.menu_name,
+      t5.code,
+      t5.menu_type,
+      t5.url,
+      t5.create_time,
+      t5.update_time
+    from sys_user t1, sys_user_role t2, sys_role t3, sys_role_menu t4,sys_menu t5
+    where t1.user_id = t2.user_id
+    and t2.role_id = t3.role_id
+    and t3.role_id = t4.role_id
+    and t4.menu_id = t5.menu_id
+    and t1.user_id = #{userId}
   </select>
 </mapper>
